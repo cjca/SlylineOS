@@ -1,8 +1,13 @@
 # Assumptions
 
-SkylineOS for Harley Davidson is provided and contracted by a separate vendor.
+SkylineOS for Harley Davidson is provided and contracted by a separate vendor called Visteon.
 
-They use QNX which is a RealTime OS similar to Linux owned by BlackBerry.
+They use the QNX Operating System which is a RealTime OS similar to Linux owned by BlackBerry.
+
+Note: Visteon and QNX both support both CarPlay from Apple and AndroidAuto from Google. I'm not sure whey AndroidAuto is not supported  from Harley Davidson. In fact, the system itself runs off Android on top of the QNX OS.
+
+Image Files that identify as 'DOS/MBR boot sector' probably need to be mounted as a QNX6 Image File.
+Image Files taht identify as 'Android sparse image, version: 1.0' need to be converted and  mounted as a loopback device
 
 
 # Locations
@@ -10,9 +15,9 @@ They use QNX which is a RealTime OS similar to Linux owned by BlackBerry.
 Files are in for the most part host/flash/sw_part2, (INSTANA_240002213D)
 
 for VR___NA_240200552D, files are in sw_part13.
-for CAL__NA_240402088D, files are in sw_part0.
+for CAL__NA_240402088D, files are in sw_part0. (Calibration Files)
 
-CAL  is 'Calibration'.  Most files are csv files.
+
 
 # Mounting Images
 
@@ -84,10 +89,6 @@ userdata.img:            Android sparse image, version: 1.0, Total of 1310720 40
 vbmeta.img:              data
 vendor.img:              Android sparse image, version: 1.0, Total of 262144 4096-byte output blocks in 23 input chunks.
 visteon-platform-la.img: DOS/MBR boot sector
-
-
-
-
 ```
 
 ### Create Virtual Python Environment
@@ -137,4 +138,42 @@ $ mkdir temp-mount2
 ## Mount via loop device
 ```
 $ mount -o loop new_vendor.img temp-mount2
+```
+
+
+# Other information
+```
+system.img
+
+drwxr-xr-x. 20 root root  4096 Jul  3 11:18 .
+drwxr-xr-x  19 root root  4096 Jul  3 10:45 ..
+drwxr-xr-x.  2 root root  4096 Mar  1 11:25 acct
+drwxr-xr-x.  2 root root  4096 Mar  1 11:25 apex
+lrw-r--r--.  1 root root    11 Mar  1 11:25 bin -> /system/bin
+lrw-r--r--.  1 root root    50 Mar  1 11:25 bugreports -> /data/user_de/0/com.android.shell/files/bugreports
+lrw-r--r--.  1 root root    11 Mar  1 11:25 cache -> /data/cache
+dr-xr-xr-x.  2 root root  4096 Mar  1 11:25 config
+lrw-r--r--.  1 root root    17 Mar  1 11:25 d -> /sys/kernel/debug
+drwxrwx--x.  2 root root  4096 Mar  1 11:25 data
+drwxr-xr-x.  2 root root  4096 Mar  1 11:25 data_mirror
+drwxr-xr-x.  2 root root  4096 Mar  1 11:25 debug_ramdisk
+lrw-------.  1 root root    23 Mar  1 11:25 default.prop -> system/etc/prop.default
+drwxr-xr-x.  2 root root  4096 Mar  1 11:25 dev
+lrw-r--r--.  1 root root    11 Mar  1 11:25 etc -> /system/etc
+lrwxr-x---.  1 root 2000    16 Mar  1 11:25 init -> /system/bin/init
+-rwxr-x---.  1 root 2000  2596 Mar  1 11:10 init.environ.rc
+drwxr-xr-x.  2 root root  4096 Mar  1 11:25 linkerconfig
+drwx------.  2 root root 16384 Mar  1 11:25 lost+found
+drwxr-xr-x.  2 root root  4096 Mar  1 11:25 odm
+drwxr-xr-x.  2 root root  4096 Mar  1 11:25 oem
+drwxr-xr-x.  2 root root  4096 Mar  1 11:25 postinstall
+drwxr-xr-x.  2 root root  4096 Mar  1 11:25 proc
+lrw-r--r--.  1 root root    15 Mar  1 11:25 product -> /system/product
+drwxr-xr-x.  3 root root  4096 Mar  1 11:25 res
+lrw-r--r--.  1 root root    21 Mar  1 11:25 sdcard -> /storage/self/primary
+drwxr-x--x.  2 root 1028  4096 Mar  1 11:25 storage
+drwxr-xr-x.  2 root root  4096 Mar  1 11:25 sys
+drwxr-xr-x. 15 root root  4096 Mar  1 11:25 system
+lrw-r--r--.  1 root root    18 Mar  1 11:25 system_ext -> /system/system_ext
+drwxr-xr-x.  2 root 2000  4096 Mar  1 11:25 vendor
 ```
