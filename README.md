@@ -28,6 +28,7 @@ recovery_mifs_hyp_la.img: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYS
 ### Create Virtual Python Environment
 
 > python3 -m venv venv
+
 > source ./venv/bin/activate
 
 ### Install QNXMount
