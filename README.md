@@ -27,22 +27,29 @@ recovery_mifs_hyp_la.img: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYS
 
 ### Create Virtual Python Environment
 
-> python3 -m venv venv
-
-> source ./venv/bin/activate
+```
+$ python3 -m venv venv
+$ source ./venv/bin/activate
+```
 
 ### Install QNXMount
 
-pip install qnxmount
-sudo apt install fuse
+```
+$ pip install qnxmount
+$ sudo apt install fuse
+```
 
 ### Create Temporary Mount Point
 
-mkdir temp-mount
+```
+$ mkdir temp-mount
+```
 
 ### Mount Image File
 
-python  -m qnxmount qnx6 vidteon-recovery-la.img ./temp-mount
+```
+$ python  -m qnxmount qnx6 vidteon-recovery-la.img ./temp-mount
+```
 
 explore!
 
@@ -50,16 +57,19 @@ explore!
 
 ### Install Andorid SDK Utilities
 
-apt install android-sdk-libsparse-utils
+```
+$ apt install android-sdk-libsparse-utils
+```
 
 ## Convert Sparse File.
-
-simg2img vendor.img new_vendor.img
-
+```
+$ simg2img vendor.img new_vendor.img
+```
 ##  Create Mount Point
-
-mkdir temp-mount2
-
+```
+$ mkdir temp-mount2
+```
 ## Mount via loop device
-
-mount -o loop new_vendor.img temp-mount2
+```
+$ mount -o loop new_vendor.img temp-mount2
+```
