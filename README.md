@@ -18,15 +18,17 @@ vendor.img: Android sparse image, version: 1.0, Total of 262144 4096-byte output
 
 ## QNX6 Image Files
 
+```
 visteon-recovery-la.img: DOS/MBR boot sector
 recovery_system_la.img: DOS/MBR boot sector
 recovery_ifs2_la.img: data
 recovery_mifs_hyp_la.img: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), statically linked, no section header
+```
 
 ### Create Virtual Python Environment
 
-python3 -m venv venv
-source ./venv/bin/activate
+> python3 -m venv venv
+> source ./venv/bin/activate
 
 ### Install QNXMount
 
