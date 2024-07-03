@@ -7,13 +7,13 @@ They use QNX which is a RealTime OS similar to Linux owned by BlackBerry.
 # Mounting Images
 
 Image Files in Package:
-./INSTANA_240002213D/orch-pkg/update-pkg/devices/host/flash/sw_part2/reflash_pkg/recovery_mifs_hyp_la.img
+`./INSTANA_240002213D/orch-pkg/update-pkg/devices/host/flash/sw_part2/reflash_pkg/recovery_mifs_hyp_la.img
 ./INSTANA_240002213D/orch-pkg/update-pkg/devices/host/flash/sw_part2/reflash_pkg/recovery_ifs2_la.img
 ./INSTANA_240002213D/orch-pkg/update-pkg/devices/host/flash/sw_part2/reflash_pkg/visteon-recovery-la.img
 ./INSTANA_240002213D/orch-pkg/update-pkg/devices/host/flash/sw_part2/reflash_pkg/recovery_system_la.img
 
 vendor.img: Android sparse image, version: 1.0, Total of 262144 4096-byte output blocks in 23 input chunks.
-
+`
 
 ## QNX6 Image Files
 
