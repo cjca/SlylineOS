@@ -17,7 +17,16 @@ Files are in for the most part host/flash/sw_part2, (INSTANA_240002213D)
 for VR___NA_240200552D, files are in sw_part13.
 for CAL__NA_240402088D, files are in sw_part0. (Calibration Files)
 
+Regular Expression for File Names:
+(INSTA) = Smart Core File (smartcore)
+(CAL__) = Calibration File (calibration)
+(VR___ ) = VR Data File  (vrdata)
+(DSP__) = Dione File (dione)
+(QTL__) = Quectel File (quectel)
+(AMP__) = Audio Amplifier (aud_amplifier)
+(NA_|EU_|ROW)[0-9]{9}(P|D)
 
+SmartCore is Vidteon's Instrument Cluster Platform Domain Controller.
 
 # Mounting Images
 
@@ -202,7 +211,7 @@ persist.img: ext4
 ./wifi_mod_para_c0.conf
 ```
 
-vendor.img
+vendor.img: Android Sparse
 ```
 ./firmware
 ./firmware/ipa_fws.b04
